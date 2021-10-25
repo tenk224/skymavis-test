@@ -42,3 +42,13 @@ python run.py example.json
 
 ## no_3
 Set appropriate access key in env
+
+```
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+export AWS_DEFAULT_REGION=ap-southeast-1
+```
+
+Assumption:
+- One team has one maintainer
+- No policies were implimented
