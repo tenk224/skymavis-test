@@ -4,7 +4,7 @@ def get_zone(t):
             return t[i+2:]
 
 def find_min(t,n):
-    result = [1000, 0]
+    result = [-1, -1]
     if n == 1:
         return 1
     else:
@@ -15,7 +15,7 @@ def find_min(t,n):
             while j < n:
                 sum += int(t[i][j])
                 j += 1
-            if sum < result[0]:
+            if sum < result[0] or result[0] == -1:
                 result[0] = sum
                 result[1] = i
             i += 1
@@ -29,7 +29,7 @@ def find_nat_same_zone(nat,zone):
     return result
 
 def find_min_same_zone(t,nat_index,n):
-    result = [1000, 0]
+    result = [-1, -1]
     if n == 1:
         return 1
     else:
@@ -40,7 +40,7 @@ def find_min_same_zone(t,nat_index,n):
             while j < n:
                 sum = sum + int(t[nat_index[i]][j])
                 j += 1
-            if sum < result[0]:
+            if sum < result[0] or result[0] == -1:
                 result[0] = sum
                 result[1] = nat_index[i]
             i += 1
@@ -86,12 +86,15 @@ def main():
 
     j = 1
     while j <= len(sub):
-        if len(find_nat_same_zone(nat,get_zone(t[0][j]))) == 0:
+        subnet_zone = get_zone(t[0][j])
+        if len(find_nat_same_zone(nat,subnet_zone)) == 0:
             t[find_min(t,j)][j] = '1'
-        elif len(find_nat_same_zone(nat,get_zone(t[0][j]))) == 1:
-            t[find_nat_same_zone(nat,get_zone(t[0][j]))[0]][j] = '1'
+        elif len(find_nat_same_zone(nat,subnet_zone)) == 1:
+            nat_same_zone = find_nat_same_zone(nat,subnet_zone)[0]
+            t[nat_same_zone][j] = '1'
         else:
-            t[find_min_same_zone(t,find_nat_same_zone(nat,get_zone(t[0][j])),j)][j] = '1'
+            nat_with_min_sub = find_min_same_zone(t,find_nat_same_zone(nat,subnet_zone),j)
+            t[nat_with_min_sub][j] = '1'
         j += 1
 
     i = 1
