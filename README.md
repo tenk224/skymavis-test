@@ -41,6 +41,18 @@ python run.py example.json
 ```
 
 ## no_3
+Terraform v1.0.8 was used
+
+Assumption:
+- One team has one maintainer
+- No policies were implimented
+
+Change directory to no_3 folder
+
+```
+cd no_3
+```
+
 Set appropriate access key in env
 
 ```
@@ -49,6 +61,8 @@ export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
 export AWS_DEFAULT_REGION=ap-southeast-1
 ```
 
-Assumption:
-- One team has one maintainer
-- No policies were implimented
+Run terraform
+
+```
+terraform apply -auto-approve
+```
