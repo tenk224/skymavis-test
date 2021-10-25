@@ -1,0 +1,23 @@
+NATInstances:
+  1 - us-west1-a
+  2 - us-west1-a
+  3 - us-west1-a
+  4 - us-west1-a
+  5 - us-west1-a
+  6 - us-west1-a
+  7 - us-west1-a
+  8 - us-west1-b
+  9 - us-west1-b
+  10 - us-west1-c
+
+Subnets:
+  1 - us-west1-a
+  2 - us-west1-a
+  3 - us-west1-b
+  4 - us-west1-b
+  5 - us-west1-b
+  6 - us-west1-b
+  7 - us-west1-c
+  8 - us-west1-c
+  9 - us-west1-c
+  10 - us-west1-c
