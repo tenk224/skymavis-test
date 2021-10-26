@@ -45,7 +45,7 @@ Terraform v1.0.8 was used
 
 Assumption:
 - One team has one maintainer
-- No policies were implimented
+- No policies were implemented
 
 Change directory to no_3 folder
 
